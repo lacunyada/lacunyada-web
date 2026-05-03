@@ -1,28 +1,42 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Landing() {
+  const router = useRouter();
+  const [fade, setFade] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setFade(true); // primero fade out
+
+      setTimeout(() => {
+        router.push("/home"); // luego cambio de página
+      }, 600); // duración del fade
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [router]);
+
   return (
-    <main className="h-screen flex items-center justify-center bg-white">
+    <main
+      className={`h-screen flex items-center justify-center bg-white relative transition-opacity duration-700 ${
+        fade ? "opacity-0" : "opacity-100"
+      }`}
+    >
+      <div className="animate-spin-slow">
+        <Image
+          src="/logo.png"
+          alt="Lacunyada logo"
+          width={200}
+          height={200}
+          priority
+        />
+      </div>
+
       
-      <Link href="/home">
-        <div className="cursor-pointer hover:scale-125 transition-transform duration-700 inline-block">
-          
-          <div className="animate-spin-slow">
-            <Image
-              src="/logo.png"
-              alt="Lacunyada logo"
-              width={400}
-              height={400}
-              priority
-            />
-          </div>
-
-        </div>
-      </Link>
-
     </main>
   );
 }
