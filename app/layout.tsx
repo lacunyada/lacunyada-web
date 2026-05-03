@@ -4,9 +4,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://lacunyada.com"),
 
-  title: "lacunyada | Contemporary Jewelry & Object Design Studio",
+  title: "lacunyada — Jewelry & Object Design Studio",
   description:
-    "lacunyada is a contemporary design studio focused on jewelry and objects made from glass, silver and experimental materials.",
+    "lacunyada is a contemporary design studio exploring jewelry, objects and experimental materials through material research.",
 
   verification: {
     google: "ayWD_jWxVp5fgU4cXG5SJ6MZWDcwe2lADAEuIGGkxBs",
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "lacunyada",
+    title: "lacunyada — Jewelry & Object Design Studio",
     description:
-      "Contemporary jewelry & object design studio based on material research.",
+      "Contemporary design studio focused on material research and experimental objects.",
     url: "https://lacunyada.com",
     siteName: "lacunyada",
     images: [
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "lacunyada",
+    title: "lacunyada — Jewelry & Object Design Studio",
     description:
-      "Contemporary jewelry & object design studio.",
+      "Contemporary design studio focused on material research and experimental objects.",
     images: ["https://lacunyada.com/og-image.png"],
   },
 };
