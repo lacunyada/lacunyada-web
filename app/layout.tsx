@@ -13,6 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://lacunyada.com"),
+
   title: "lacunyada | Contemporary Jewelry & Object Design Studio",
   description:
     "lacunyada is a contemporary design studio focused on jewelry and objects made from glass, silver and experimental materials.",
