@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     siteName: "lacunyada",
     images: [
       {
-        url: "https://lacunyada.com/og-image.jpg",
-        width: 1200,
-        height: 630,
+        url: "https://lacunyada.com/og-image.png",
+    width: 1200,
+    height: 630,
       },
     ],
     type: "website",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "lacunyada",
     description:
       "Contemporary jewelry & object design studio.",
-    images: ["/og-image.jpg"],
+    images: ["https://lacunyada.com/og-image.png"],
   },
 };
 
