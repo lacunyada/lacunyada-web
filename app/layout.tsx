@@ -13,11 +13,36 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "lacunyada",
+  title: "lacunyada | Contemporary Jewelry & Object Design Studio",
   description:
-    "contemporary design thinking",
+    "lacunyada is a contemporary design studio focused on jewelry and objects made from glass, silver and experimental materials.",
+
   verification: {
     google: "ayWD_jWxVp5fgU4cXG5SJ6MZWDcwe2lADAEuIGGkxBs",
+  },
+
+  openGraph: {
+    title: "lacunyada",
+    description:
+      "Contemporary jewelry & object design studio based on material research.",
+    url: "https://lacunyada.com",
+    siteName: "lacunyada",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "lacunyada",
+    description:
+      "Contemporary jewelry & object design studio.",
+    images: ["/og-image.jpg"],
   },
 };
 
