@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+import "./globals.css";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://lacunyada.com"),
 
@@ -39,3 +42,15 @@ export const metadata: Metadata = {
     images: ["https://lacunyada.com/og-image.png"],
   },
 };
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
+}
