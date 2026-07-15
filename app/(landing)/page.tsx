@@ -8,21 +8,34 @@ export default function Landing() {
   const router = useRouter();
   const [fade, setFade] = useState(false);
 
+  // 1. Auto-avance a los 5 segundos
   useEffect(() => {
     const timer = setTimeout(() => {
-      setFade(true); // primero fade out
-
-      setTimeout(() => {
-        router.push("/home"); // luego cambio de página
-      }, 600); // duración del fade
-    }, 3000);
+      setFade(true);
+    }, 5000);
 
     return () => clearTimeout(timer);
-  }, [router]);
+  }, []);
+
+  // 2. Navegación tras el fade
+  useEffect(() => {
+    if (!fade) return;
+
+    const navTimer = setTimeout(() => {
+      router.replace("/home");
+    }, 600);
+
+    return () => clearTimeout(navTimer);
+  }, [fade, router]);
+
+  function handleSkip() {
+    setFade(true);
+  }
 
   return (
     <main
-      className={`h-screen flex items-center justify-center bg-white relative transition-opacity duration-700 ${
+      onClick={handleSkip}
+      className={`h-screen w-screen flex items-center justify-center bg-white relative cursor-pointer transition-opacity duration-700 ${
         fade ? "opacity-0" : "opacity-100"
       }`}
     >
@@ -35,8 +48,6 @@ export default function Landing() {
           priority
         />
       </div>
-
-      
     </main>
   );
 }

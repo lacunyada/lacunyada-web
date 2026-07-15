@@ -12,13 +12,6 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: #ffffff;
   color: #171717;
@@ -34,5 +27,12 @@ body {
 .animate-spin-slow {
   animation: spinSlow 16s linear infinite;
 }
+.link {
+  text-decoration: none;
+  color: #000;
+  transition: color 0.2s ease;
+}
 
-
+.link:hover {
+  color: #888;
+}
