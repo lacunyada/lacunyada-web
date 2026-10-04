@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 
@@ -48,6 +49,10 @@ export const metadata: Metadata = {
   },
 };
 
+// Efecto de la barra: gris al pasar el ratón (ordenador) o al pulsar (móvil)
+const navLink =
+  "transition-colors duration-200 hover:text-gray-400 active:text-gray-400";
+
 export default function RootLayout({
   children,
 }: {
@@ -60,14 +65,24 @@ export default function RootLayout({
     >
       <body className="min-h-screen bg-white text-black font-sans flex flex-col">
         {/* NAVBAR GLOBAL (CON PADDING SOLO AQUÍ) */}
-        <div className="shrink-0 px-6 md:px-16 py-10">
-          <nav className="flex gap-5 text-sm md:text-base tracking-normal">
-            <Link href="/">lacunyada</Link>
-            <Link href="/objects">.objects</Link>
-            <Link href="/exhibitions">.exhibitions</Link>
-            <Link href="/about">.about</Link>
-            <Link href="/order">.order</Link>
+        <div className="shrink-0 px-6 md:px-16 py-6 md:py-10 flex items-center justify-between gap-6 md:gap-8">
+          <nav className="min-w-0 grid grid-cols-[auto_auto] gap-x-6 gap-y-1 text-lg md:flex md:flex-nowrap md:gap-x-5 md:text-base tracking-normal">
+            <Link href="/objects" className={navLink}>.objects</Link>
+            <Link href="/exhibitions" className={navLink}>.exhibitions</Link>
+            <Link href="/about" className={navLink}>.about</Link>
+            <Link href="/order" className={navLink}>.order</Link>
           </nav>
+
+          <Link href="/" aria-label="lacunyada, intro" className="shrink-0">
+            <Image
+              src="/logo.png"
+              alt="Lacunyada"
+              width={160}
+              height={160}
+              priority
+              className="h-20 md:h-24 w-auto"
+            />
+          </Link>
         </div>
 
         {/* CONTENIDO DE PÁGINAS — crece si el contenido es más alto que la pantalla */}

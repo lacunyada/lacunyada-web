@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 const items = [
-
   {
     href: "/exhibitions/lapopup",
     label: ".lapopup",
@@ -15,7 +14,7 @@ const items = [
     type: "canopy market",
     city: "madrid",
     year: "2024",
-  },  
+  },
   {
     href: "/exhibitions/motherlode",
     label: ".motherlode",
@@ -39,18 +38,29 @@ export default function Page() {
               <div className="h-px w-full bg-black opacity-80" />
               <Link
                 href={item.href}
-                className="link grid grid-cols-[2fr_1.8fr_1.5fr_0.7fr] items-center py-2.5 pl-6 pr-6 sm:pl-10 sm:pr-10 lg:py-3.5 lg:pl-16 lg:pr-16"
+                className="link grid grid-cols-[1fr_auto] items-baseline gap-x-4 gap-y-1 py-4 sm:grid-cols-[2fr_1.8fr_1.5fr_0.7fr] sm:items-center sm:gap-x-0 sm:gap-y-0 sm:py-2.5 sm:pl-10 sm:pr-10 lg:py-3.5 lg:pl-16 lg:pr-16"
               >
-                <span className="text-lg md:text-2xl font-light leading-tight">
+                <span className="order-1 sm:order-none text-2xl sm:text-lg md:text-2xl font-light leading-tight">
                   {item.label}
                 </span>
-                <span className="text-lg md:text-2xl font-light leading-tight">
-                  {item.type}
+
+                <span className="order-3 sm:order-none font-light leading-tight">
+                  {/* punto invisible: alinea el texto con la letra que sigue al punto del título (solo móvil) */}
+                  <span
+                    aria-hidden="true"
+                    className="invisible text-2xl leading-none sm:hidden"
+                  >
+                    .
+                  </span>
+                  <span className="text-base sm:text-lg md:text-2xl">
+                    {item.type}
+                  </span>
                 </span>
-                <span className="text-lg md:text-2xl font-light leading-tight">
+
+                <span className="order-4 sm:order-none text-base sm:text-lg md:text-2xl font-light leading-tight text-right sm:text-left">
                   {item.city}
                 </span>
-                <span className="text-lg md:text-2xl font-light leading-tight text-right">
+                <span className="order-2 sm:order-none text-2xl sm:text-lg md:text-2xl font-light leading-tight text-right">
                   {item.year}
                 </span>
               </Link>
